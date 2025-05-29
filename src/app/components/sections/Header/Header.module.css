@@ -1,0 +1,40 @@
+.header {
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 10rem;    
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.37);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.18);
+}
+
+.header h1 {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.options{
+    display: flex;
+    gap: 1rem;
+}
+
+.options a {
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    background: rgba(255,255,255,0.08);
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+}
+.options a:hover {
+    background: rgba(255,255,255,0.18);
+    color: #ffd700;
+}

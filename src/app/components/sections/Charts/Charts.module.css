@@ -1,0 +1,46 @@
+.charts_container {
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;  
+  gap: 2rem;
+}
+
+.transaction {
+  display: flex;  
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  flex: 1;
+}
+
+.chart_title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 768px) {
+  .charts_container {
+    padding: 1rem;
+  }
+  
+  .transaction {
+    padding: 1rem;
+  }
+  
+  .chart_title {
+    font-size: 1.125rem;
+  }
+}
+
+.transaction:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease-in-out;
+}
