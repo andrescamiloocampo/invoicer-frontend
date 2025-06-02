@@ -1,13 +1,14 @@
 import { type ReactElement } from "react";
 import { BarChart } from "@mui/x-charts";
+import type { BarChartModel } from "./BarChart.model";
 
-export const CustomBarChart = (): ReactElement => {
+export const CustomBarChart = ({months}:BarChartModel): ReactElement => {
   return (
     <BarChart
       xAxis={[
         {
           id: "barCategories",
-          data: ["January", "February", "March"],
+          data: months.map(month => month.name),        
           tickLabelStyle: {
             fill: "#ffffff",
             fontSize: 12,
@@ -24,7 +25,7 @@ export const CustomBarChart = (): ReactElement => {
       ]}
       series={[
         {
-          data: [2, 5, 3],
+          data: months.map(month => month.count),
           color: "#10b981",
         },
       ]}

@@ -1,0 +1,78 @@
+.invoices_container {  
+  padding: 2rem 0;  
+  border-radius: 0.5rem;    
+}
+
+.invoices_table_wrapper {
+  max-height: 800px;
+  height: 600px;
+  overflow-y: auto;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.invoices_table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #23232a;  
+  color: #f4f4f5;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+  font-size: 1rem;  
+}
+
+.invoices_table th, .invoices_table td {
+  padding: 1rem 0.75rem;
+  text-align: left;
+}
+
+.invoices_table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #23232a;
+}
+
+.invoices_table th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #23232a;
+}
+
+.invoices_table th {
+  background: #23232a;
+  color: #a1a1aa;
+  font-weight: 600;
+  border-bottom: 2px solid #31313a;
+}
+
+.invoices_table tr {
+  transition: background 0.2s;
+}
+
+.invoices_table tbody tr {
+  border-bottom: 1px solid #23232a;
+}
+
+.invoices_table tbody tr:hover {
+  background: #2d2d36;
+}
+
+.invoices_table td {
+  border-bottom: 1px solid #23232a;
+}
+
+.invoices_table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .invoices_table th, .invoices_table td {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .invoices_container {
+    padding: 0.5rem;
+  }
+}

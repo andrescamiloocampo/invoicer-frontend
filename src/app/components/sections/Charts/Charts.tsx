@@ -2,31 +2,36 @@
 
 import { type ReactElement } from "react";
 import styles from "./Charts.module.css";
-import { BarChart } from "../../organisms";
-import { PieChart } from "@mui/x-charts";
+import { BarChart, PieChart, CreateInvoice } from "../../organisms";
+import type { ChartsModel } from "./Charts.model";
+import {
+  categorizeTransaction,
+  type TransactionsCount,
+  categorizeMonths,
+  type Month,
+} from "@/app/utils";
 
-export const Charts = (): ReactElement => {
+export const Charts = ({ invoices }: ChartsModel): ReactElement => {
+  const months: Month[] = categorizeMonths(invoices ?? []);
+  const transactions: TransactionsCount[] = categorizeTransaction(
+    invoices ?? []
+  );
+
   return (
     <section className={styles.charts_container}>
-      <div className={styles.transaction}>
-        <h3 className={styles.chart_title}>Monthly Transactions</h3>
-        <BarChart />
+      <div className={styles.charts}>
+        <div className={styles.transaction}>
+          <h3 className={styles.chart_title}>Monthly Transactions</h3>
+          <BarChart months={months} />
+        </div>
+        <div className={styles.transaction}>
+          <h3 className={styles.chart_title}>Income/Outcome</h3>
+          <PieChart transactions={transactions} />
+        </div>
       </div>
-      <div className={styles.transaction}>
-        <h3 className={styles.chart_title}>Income/Expenses</h3>
-        <PieChart
-          series={[
-            {
-              data: [
-                { id: 0, value: 10, label: "series A" },
-                { id: 1, value: 15, label: "series B" },                
-              ],
-            },
-          ]}
-          width={200}
-          height={200}
-        />
-      </div>
+
+      <CreateInvoice/>
+
     </section>
   );
 };

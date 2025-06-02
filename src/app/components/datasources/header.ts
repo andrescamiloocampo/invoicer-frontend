@@ -8,7 +8,7 @@ export const options: HeaderOption[] = [
   {
     id: 1, 
     name: "Invoices",
-    href: "dashboard/invoices",
+    href: "/dashboard/invoices",
   },
   {
     id: 2,

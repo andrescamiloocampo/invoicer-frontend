@@ -1,7 +1,15 @@
+.charts{
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
 .charts_container {
   width: 100%;
   padding: 1.5rem 0;
   display: flex;  
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
